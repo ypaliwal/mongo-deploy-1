@@ -1,0 +1,117 @@
+<div class="row">
+<div class="container">
+	<div class="col-sm-8 col-sm-offset-2">
+		
+	<!-- CARS DATABASE -->
+		<h2 class="text-center">Database of Cars Here:</h2>
+
+		<!-- POPULATE DATA FROM DATABASE -->
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Make & Model</th>
+					<th>Year</th>
+					<th>Description</th>
+					<th>Delete?</th>
+					<th>Update?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in ctrl.dataArr | orderBy:'make'">
+					<td>{{ item.make }} {{ item.model }}</td>
+					<td>{{ item.year }}</td>
+					<td>{{ item.description }}</td>
+					<td class="delete"><button class="btn btn-danger" ng-click="ctrl.deleteCar(item._id)">X</button></td>
+					<td class="update"><button class="btn btn-info" ng-click="ctrl.updateCar(item._id)">?</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<button class="btn btn-info" ng-click="ctrl.exData()">Add Example Data</button>
+
+	<!-- TRUCKS DATABASE -->
+		<br>
+		<h3 class="text-center">Add Cars:</h3>
+
+		<div>
+			<div class="col-sm-6">
+				<!-- Car Make -->
+				<div class="form-group">
+					<label>Make:</label>
+					<input ng-model="ctrl.addMake" class="form-control" type="text" required></input>
+				</div>
+				<!-- Car Model -->
+				<div class="form-group">
+					<label>Model:</label>
+					<input ng-model="ctrl.addModel" class="form-control" type="text" required></input>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<!-- Car Year -->
+				<div class="form-group">
+					<label>Year:</label>
+					<input ng-model="ctrl.addYear" class="form-control" type="text" required></input>
+				</div>
+				<!-- Car Description -->
+				<div class="form-group">
+					<label>Description:</label>
+					<input ng-model="ctrl.addDescription" class="form-control" type="text" required></input>
+				</div>
+			</div>
+			<!-- Button: Add Product -->
+			<button class="btn" ng-click="ctrl.addCar()">Add Product</button>
+		</div>
+
+		<!-- MODAL -->
+		<div id="myModal" class="modal">
+		  <div class="modal-content">
+		    <span class="close">x</span>
+		    <h2 class="text-center">Update the {{ctrl.modalMake}} {{ctrl.modalModel}}</h2>
+		    <br>
+		    <div class="row">
+		    	<div class="col-sm-6">
+					<!-- Car Make -->
+					<div class="form-group">
+						<label>Make:</label>
+						<input ng-model="ctrl.modalMake" class="form-control" type="text" required></input>
+					</div>
+					<!-- Car Model -->
+					<div class="form-group">
+						<label>Model:</label>
+						<input ng-model="ctrl.modalModel" class="form-control" type="text" required></input>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<!-- Car Year -->
+					<div class="form-group">
+						<label>Year:</label>
+						<input ng-model="ctrl.modalYear" class="form-control" type="text" required></input>
+					</div>
+					<!-- Car Description -->
+					<div class="form-group">
+						<label>Description:</label>
+						<input ng-model="ctrl.modalDescription" class="form-control" type="text" required></input>
+					</div>
+				</div>
+				<!-- Button: Add Product -->
+				<button class="btn" ng-click="ctrl.updateCarAct()">Update Product</button>
+		    </div>
+		    
+		    <p class="text-center newFont"></p>
+		  </div>
+		</div>
+
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

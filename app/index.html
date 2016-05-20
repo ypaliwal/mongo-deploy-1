@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ScotchTutUI-Mongo,Express</title>
+
+	<!-- STYLING -->
+	<link rel="stylesheet" type="text/css" href="assets/css/vendor/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+
+	<!-- JS: VENDOR -->
+	<script type="text/javascript" src="assets/js/vendor/angular.js"></script>
+	<script type="text/javascript" src="assets/js/vendor/angular-ui-router.js"></script>
+
+	<!-- JS: APP CONTROLLERS -->
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="site/controllers/home.ctrl.js"></script>
+
+	<!-- JS: APP SERVICES -->
+	<script type="text/javascript" src="site/services/db.srv.js"></script>
+</head>
+<body ng-app="myApp">
+
+	<div ui-view></div>
+
+</body>
+</html>
